@@ -31,7 +31,7 @@ class HeuristicSearch(object):
         elif self._condition == SearchType.MIN_LOCAL:
             return current.smallest_neighbor
 
-    #refinando aun, se me hace fea esa condicional self._condition(a , b)
+    # refinando aun, se me hace fea esa condicional self._condition(a , b)
     def hill_climbing(self, initial: State):
         current: Node = Node(initial)
         self._last_node = current
