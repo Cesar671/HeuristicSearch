@@ -29,6 +29,6 @@ class Printer(object):
             for j in range(0, size):
                 pos_queen = positions[j]
                 to_print = "1" if pos_queen == i else "0"
-                print(f"""{to_print} """, end="")
+                print(f"""{to_print}  """, end="")
             print()
         print("-" * size * 3)

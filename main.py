@@ -1,4 +1,3 @@
-from Proyects.problem import ProblemP
 from Search.search import HeuristicSearch
 from Printer.Printer import Printer
 from Proyects.EightQueens import ProblemQueen
