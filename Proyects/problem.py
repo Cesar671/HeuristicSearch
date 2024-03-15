@@ -9,7 +9,6 @@ import string
 class ProblemP(State):
 
     def __init__(self, name: str):
-        super().__init__()
         self._name = name  # simplemente para darle un ID el cual no es determinante a la hora de resolver
         self._h = random.randint(10, 100)  # establezco un numero aleatorio como valor para el ejemplo
 
