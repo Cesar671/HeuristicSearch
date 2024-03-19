@@ -4,7 +4,7 @@ from Proyects.EightQueens import ProblemQueen
 
 
 def main():
-    initial_problem = ProblemQueen("asd", 8)
+    initial_problem = ProblemQueen("aefs", 8)
     hsc = HeuristicSearch()
     prnt = Printer()
 

@@ -16,7 +16,7 @@ class SearchType(Enum):
 
 class HeuristicSearch(object):
     def __init__(self):
-        self._searching: SearchType = SearchType.MAX_LOCAL
+        self._search_type: SearchType = SearchType.MAX_LOCAL
         self._last_node = None
         self._tolerance = 1000
 
@@ -25,16 +25,15 @@ class HeuristicSearch(object):
         return self._last_node
 
     def set_search_by_min_local(self):
-        self._searching = SearchType.MIN_LOCAL
+        self._search_type = SearchType.MIN_LOCAL
 
     def set_search_by_max_local(self):
-        self._searching = SearchType.MAX_LOCAL
+        self._search_type = SearchType.MAX_LOCAL
 
-    # obtenemos el valor que requerimos segun si buscamos un mximo local o un minimo local
     def _get_best_neighbor(self, current):
-        if self._searching == SearchType.MAX_LOCAL:
+        if self._search_type == SearchType.MAX_LOCAL:
             return current.largest_neighbor
-        elif self._searching == SearchType.MIN_LOCAL:
+        elif self._search_type == SearchType.MIN_LOCAL:
             return current.smallest_neighbor
 
     def hill_climbing(self, initial: State):
@@ -43,7 +42,7 @@ class HeuristicSearch(object):
         for i in range(0, self._tolerance):
             current.generate_neighbors()
             best_neighbor = self._get_best_neighbor(current)
-            conditional = self._searching.get_conditional
+            conditional = self._search_type.get_conditional
             if ((best_neighbor is None) or
                     conditional(best_neighbor.content.h, current.content.h)):
                 return current.content

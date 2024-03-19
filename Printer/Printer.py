@@ -20,15 +20,15 @@ class Printer(object):
             print("fin nodo")
 
     def print_table_queens(self, state):
-        print(f"""State : {state.name}""")
+        print(f"""id State : {state.name}""")
         positions = state.queens_position
-        print(f"""positions : {positions} """)
+        print(f"""queens positions : {positions} """)
         print(f"""value : {state.h}""")
         size = len(positions)
         for i in range(0, size):
             for j in range(0, size):
                 pos_queen = positions[j]
-                to_print = "1" if pos_queen == i else "0"
+                to_print = "♕" if pos_queen == i else "-"
                 print(f"""{to_print}  """, end="")
             print()
         print("-" * size * 3)
